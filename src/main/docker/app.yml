@@ -1,0 +1,13 @@
+version: '2'
+services:
+    jacoco-app:
+        image: jacoco
+        environment:
+            - _JAVA_OPTIONS=-Xmx512m -Xms256m
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://jacoco-postgresql:5432/jacoco
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+    jacoco-postgresql:
+        extends:
+            file: postgresql.yml
+            service: jacoco-postgresql

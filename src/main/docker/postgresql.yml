@@ -1,0 +1,11 @@
+version: '2'
+services:
+    jacoco-postgresql:
+        image: postgres:10.4
+        # volumes:
+        #     - ~/volumes/jhipster/jacoco/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=jacoco
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
